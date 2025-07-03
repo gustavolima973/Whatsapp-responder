@@ -7,13 +7,15 @@ const comandos = {
                 .join('\n');
         }
     },
+
     catalogo: {
-        descricao: 'Envia o link do catálogo atual',
-        resposta: () => 'Veja nosso catálogo aqui: https://linkcatalogo.com 📦'
+        descricao: 'Envia o catálogo (PDF e imagem)',
+        resposta: () => '__enviar_catalogo__' // sinal para o bot tratar
     },
+
     horario: {
         descricao: 'Informa o horário de atendimento',
-        resposta: () => 'Atendemos de segunda a sexta, das 08h às 18h. ⏰'
+        resposta: () => '🕒 Atendemos de segunda a sexta, das 08h às 18h.'
     }
 };
 

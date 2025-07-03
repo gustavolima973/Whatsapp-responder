@@ -11,12 +11,15 @@ const respostas = [
         palavras: ['preço', 'custa', 'valor'],
         resposta: '{nome}, os valores variam! Me diga qual produto você deseja saber. 💰'
     },
-    {
-        palavras: ['catálogo', 'catalogo'],
-         respostas: [
-            'Claro, {nome}! Nosso catálogo está aqui: https://linkcatalogo.com 📦'
-        ]
-    },
+
+  {
+    palavras: ['catálogo', 'lista', 'produtos'],
+    respostas: [
+      'Claro {nome}, já estou enviando o catálogo! 📦',
+      'Ei {nome}, confira nosso catálogo atualizado!',
+    ]
+  },
+  // outras regras
     {
         palavras: ['entrega', 'frete', 'envio'],
         resposta: 'Fazemos entregas para todo o Brasil via correios ou motoboy, {nome}! 🚚'

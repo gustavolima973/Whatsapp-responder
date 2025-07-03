@@ -1,7 +1,74 @@
 {
+  
+  "name": "whatsapp-bot-node",
+  
+  "version": "1.0.0",
+  
+  "description": "Bot inteligente para WhatsApp com painel e API REST.",
+  
+  "main": "src/bot/bot.js",
+  
+  "scripts": {
+  
+    
+  "start": "node src/bot/bot.js",
+  
+    
+  "api": "node api/server.js",
+  
+    
+  "sim": "node src/simulador/simularMensagens.js",
+  
+    
+  "dev": "vite",
+  
+    
+  "build": "vite build",
+  
+    
+  "preview": "vite preview"
+  
+  },
+  
+  "keywords": [
+  
+    
+  "whatsapp",
+  
+    
+  "bot",
+  
+    
+  "api",
+  
+    
+  "automação"
+  
+  ],
+  
+  "author": "Gustavo Lima",
+  
+  "license": "MIT",
+  
   "dependencies": {
-    "qrcode-terminal": "^0.12.0",
-    "whatsapp-web.js": "^1.30.0",
-    "xlsx": "^0.18.5"
+  
+    
+  "chalk": "^4.1.2",
+  
+    
+  "cors": "^2.8.5",
+  
+    
+  "express": "^4.18.2",
+  
+    
+  "qrcode-terminal": "^0.12.0",
+  
+    
+  "whatsapp-web.js": "^1.30.0",
+  
+    
+  "xlsx": "^0.18.5"
+  
   }
 }

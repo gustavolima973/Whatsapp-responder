@@ -1,6 +1,8 @@
-const { registrarMensagem } = require('./mensagemHelper');
-const { salvarContato } = require('./contatoHelper');
-const respostas = require('./respostas');
+const { registrarMensagem } = require('../helpers/mensagemHelper');
+const { salvarContato } = require('../helpers/contatoHelper');
+const { listarMensagens } = require('../helpers/mensagemHelper');
+const respostas = require('../bot/respostas');
+
 
 // Simula uma mensagem recebida
 async function simularMensagem(numero, nome, texto) {
@@ -31,7 +33,7 @@ async function simularMensagem(numero, nome, texto) {
 
 // Lista de mensagens para simular
 const testes = [
-    { numero: '5581988880010', nome: 'Clara', texto: '!ajuda' },
+    { numero: '5581988880010', nome: 'Clara', texto: '!exportar catálogo' },
     { numero: '5581988880001', nome: 'Ana', texto: 'oi' },
     { numero: '5581988880002', nome: 'João', texto: 'quero ver o catálogo' },
     { numero: '5581988880003', nome: 'Lucas', texto: 'vocês entregam?' },
@@ -45,4 +47,4 @@ const testes = [
     for (const teste of testes) {
         await simularMensagem(teste.numero, teste.nome, teste.texto);
     }
-})();
+})()

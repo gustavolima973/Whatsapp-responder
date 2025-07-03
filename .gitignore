@@ -1,4 +1,20 @@
-sessions/
+# Node.js
 node_modules/
+.env
+*.log
+.wwebjs_cache/
+# WhatsApp session
 sessions/
-data/
+.session/
+
+# Dados temporários ou sensíveis
+data/.keep
+exportados/
+assets/catalogo.pdf
+assets/catalogo.jpg
+contatos.json
+contatos.xlsx
+mensagens.json
+# VS Code configs
+.vscode/
+.DS_Store

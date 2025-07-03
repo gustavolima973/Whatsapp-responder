@@ -1,0 +1,14 @@
+{
+  "adminNumero": "5561xxxxxxx@c.us",
+  "horarioAtendimento": {
+    "inicio": "08:00",
+    "fim": "18:00"
+  },
+  "catalogo": {
+    "pdfPath": "./assets/catalogo.pdf",
+    "imagePath": "./assets/catalogo.jpg"
+  },
+  "mensagens": {
+    "foraHorario": "Olá, {nome}. Nosso atendimento funciona das 08h às 18h. Envie sua mensagem e responderemos assim que possível! ⏰"
+  }
+}
