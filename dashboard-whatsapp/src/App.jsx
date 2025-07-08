@@ -3,33 +3,47 @@ import api from './services/api';
 
 function App() {
   const [contatos, setContatos] = useState([]);
+  const [erro, setErro] = useState('');
+  const [carregando, setCarregando] = useState(true); // 👈 controle de carregamento
 
   useEffect(() => {
-  async function carregarContatos() {
-    console.log('[DEBUG] Buscando contatos...');
-    try {
-      const resposta = await api.get('/contatos');
-      console.log('[DEBUG] Contatos recebidos:', resposta.data);
-      setContatos(resposta.data);
-    } catch (erro) {
-      console.error('[ERRO] Falha ao buscar contatos:', erro);
+    async function carregarContatos() {
+      try {
+        const resposta = await api.get('/contatos');
+        setContatos(resposta.data);
+      } catch (erro) {
+        console.error('[ERRO] Falha ao buscar contatos:', erro);
+        setErro('❌ Erro ao carregar contatos. Tente novamente mais tarde.');
+      } finally {
+        setCarregando(false); // 👈 marca que terminou
+      }
     }
-  }
 
-  carregarContatos();
-}, []);
+    carregarContatos();
+  }, []);
 
-
+  
   return (
-    <div style={{ padding: '2rem' }}>
+    <div style={{ padding: '1rem', fontFamily: 'Arial' }}>
       <h1>📇 Lista de Contatos</h1>
-      <ul>
-        {contatos.map((c) => (
-          <li key={c.numero}>
-            <strong>{c.nome}</strong> – {c.numero}
-          </li>
-        ))}
-      </ul>
+
+      {carregando && <p>🔄 Carregando contatos...</p>}
+
+      {erro && <p style={{ color: 'red' }}>{erro}</p>}
+
+      {!carregando && !erro && contatos.length === 0 && (
+        <p>Nenhum contato encontrado.</p>
+      )}
+
+      {!carregando && !erro && contatos.length > 0 && (
+        <ul>
+          {contatos.map((c) => (
+            <li key={c.numero}>
+              <strong>{c.nome}</strong> – {c.numero}
+            </li>
+          ))}
+        </ul>
+      )}
     </div>
   );
 }

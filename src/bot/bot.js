@@ -134,7 +134,7 @@ client.on('ready', () => {
   log('Conectado com sucesso ao WhatsApp!', 'BOT');
 });
 
-client.on('message_create', async (message) => {
+client.on('message', async (message) => {
   const senderId = message.from;
   if (!senderId.endsWith('@c.us')) return;
 

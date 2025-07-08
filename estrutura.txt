@@ -1,0 +1,64 @@
+.
+├── api
+│   ├── middlewares
+│   │   └── auth.js
+│   ├── routes
+│   │   ├── contatos.js
+│   │   ├── disparar.js
+│   │   └── mensagens.js
+│   └── server.js
+├── assets
+│   ├── catalogo.jpg
+│   └── catalogo.pdf
+├── dashboard-whatsapp
+│   ├── eslint.config.js
+│   ├── index.html
+│   ├── node_modules
+│   ├── package.json
+│   ├── package-lock.json
+│   ├── public
+│   │   └── vite.svg
+│   ├── README.md
+│   ├── src
+│   │   ├── App.css
+│   │   ├── App.jsx
+│   │   ├── assets
+│   │   ├── components
+│   │   ├── index.css
+│   │   ├── main.jsx
+│   │   └── services
+│   └── vite.config.js
+├── estrutura.txt
+├── exportados
+│   └── contatos_catalogo.xlsx
+├── node_modules
+├── package.json
+├── package-lock.json
+├── README.md
+├── sessions
+│   └── session
+│       ├── Default
+│       └── DevToolsActivePort
+├── src
+│   ├── bot
+│   │   ├── bot.js
+│   │   ├── comandos.js
+│   │   ├── horarioHelper.js
+│   │   └── respostas.js
+│   ├── config
+│   │   └── config.json
+│   ├── data
+│   │   ├── contatos.json
+│   │   ├── contatos.xlsx
+│   │   └── mensagens.json
+│   ├── helpers
+│   │   ├── checkFolders.js
+│   │   ├── contatoHelper.js
+│   │   ├── exportarHelper.js
+│   │   ├── logger.js
+│   │   └── mensagemHelper.js
+│   └── simulador
+│       └── simularMensagens.js
+└── testarListas.js
+
+558 directories, 1095 files

@@ -1,45 +1,36 @@
 const fs = require('fs');
-const XLSX = require('xlsx');
+const path = require('path');
 
-const caminhoArquivo = './data/mensagens.xlsx';
+const CAMINHO_ARQUIVO = path.join(__dirname, '../data/mensagens.json');
 
-function registrarMensagem(contato, mensagemRecebida, respostaEnviada = '') {
-    let mensagens = [];
+// Garante que o arquivo exista
+if (!fs.existsSync(CAMINHO_ARQUIVO)) {
+  fs.writeFileSync(CAMINHO_ARQUIVO, '[]');
+}
 
-    if (!fs.existsSync('./data')) fs.mkdirSync('./data');
+function registrarMensagem(contato, recebida, resposta) {
+  const mensagens = listarMensagens();
+  mensagens.push({
+    nome: contato.nome,
+    numero: contato.numero,
+    recebida,
+    resposta,
+    timestamp: new Date().toISOString()
+  });
 
-    if (fs.existsSync(caminhoArquivo)) {
-        const workbook = XLSX.readFile(caminhoArquivo);
-        const sheet = workbook.Sheets[workbook.SheetNames[0]];
-        mensagens = XLSX.utils.sheet_to_json(sheet);
-    }
-
-    mensagens.push({
-        numero: contato.numero,
-        nome: contato.nome,
-        data: new Date().toLocaleString(),
-        recebida: mensagemRecebida,
-        resposta: respostaEnviada
-    });
-
-    const novaPlanilha = XLSX.utils.json_to_sheet(mensagens);
-    const novoWorkbook = XLSX.utils.book_new();
-    XLSX.utils.book_append_sheet(novoWorkbook, novaPlanilha, 'Mensagens');
-    XLSX.writeFile(novoWorkbook, caminhoArquivo);
-
-    console.log(`[📝] Mensagem registrada: ${contato.numero} - "${mensagemRecebida}"`);
-const XLSX = require('xlsx');
-const fs = require('fs');
-
-const caminhoMensagens = './data/mensagens.xlsx';
+  fs.writeFileSync(CAMINHO_ARQUIVO, JSON.stringify(mensagens, null, 2));
+}
 
 function listarMensagens() {
-    if (!fs.existsSync(caminhoMensagens)) return [];
-
-    const workbook = XLSX.readFile(caminhoMensagens);
-    const sheet = workbook.Sheets[workbook.SheetNames[0]];
-    return XLSX.utils.sheet_to_json(sheet); // [{ numero, nome, data, recebida, resposta }, ...]
+  try {
+    const dados = fs.readFileSync(CAMINHO_ARQUIVO, 'utf-8');
+    return JSON.parse(dados);
+  } catch (erro) {
+    return [];
+  }
 }
 
-module.exports = { registrarMensagem, listarMensagens };
-}
+module.exports = {
+  registrarMensagem,
+  listarMensagens
+};

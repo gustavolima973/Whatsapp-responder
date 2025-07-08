@@ -1,17 +1,23 @@
+const cors = require('cors');
 const express = require('express');
-const cors = require('cors'); // ✅ importa o CORS
+
 const fs = require('fs');
 const path = require('path');
 
 const app = express();
 const PORT = 3000;
 
-app.use(cors()); // ✅ habilita o CORS para todas as origens
+app.use(cors({
+  origin: '*', // Libera o acesso para qualquer origem
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type'],
+}));
+
 app.use(express.json());
 
 // 👉 Endpoint para retornar contatos
 app.get('/contatos', (req, res) => {
-  const filePath = path.join(__dirname, 'data', 'contatos.json');
+ const filePath = path.join(__dirname, '..', 'src', 'data', 'contatos.json');
 
   try {
     const data = fs.readFileSync(filePath, 'utf8');

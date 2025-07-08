@@ -2,7 +2,7 @@
 node_modules/
 .env
 *.log
-.wwebjs_cache/
+
 # WhatsApp session
 sessions/
 .session/
@@ -18,3 +18,8 @@ mensagens.json
 # VS Code configs
 .vscode/
 .DS_Store
+dist/
+exportados/
+*.xlsx
+*.png
+.wwebjs_cache/
