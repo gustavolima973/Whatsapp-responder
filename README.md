@@ -1,11 +1,10 @@
-# 🤖 WhatsApp Bot Node.js – Fase 1 Finalizada
+🤖 WhatsApp Bot Node.js
 
-Este projeto é um bot de atendimento automático via WhatsApp, desenvolvido em Node.js com a biblioteca [whatsapp-web.js](https://github.com/pedroslopez/whatsapp-web.js).
+Esse projeto é um bot de atendimento automático via WhatsApp, desenvolvido em Node.js com a biblioteca [whatsapp-web.js](https://github.com/pedroslopez/whatsapp-web.js).
 Foi construído com foco em modularidade, evolução por fases e integração futura com um sistema de disparo de mensagens.
 
----
 
-## ✅ Funcionalidades implementadas (Fase 1)
+✅ Funcionalidades implementadas (Fase 1)
 
 * Conexão automática com WhatsApp Web via QR Code
 * Respostas automáticas baseadas em palavras-chave
@@ -17,9 +16,8 @@ Foi construído com foco em modularidade, evolução por fases e integração fu
 * Ignora grupos e mensagens de status
 * Modo de teste local com mensagens simuladas
 
----
 
-## 📁 Estrutura do projeto
+📁 Estrutura do projeto
 
 ```
 whatsapp-bot-node/
@@ -38,9 +36,8 @@ whatsapp-bot-node/
 └── README.md
 ```
 
----
 
-## 🚀 Como executar
+🚀 Como executar
 
 ```bash
 # Instale as dependências
@@ -50,29 +47,26 @@ npm install
 node src/bot.js
 ```
 
-### ✅ Testes locais com simulação
+ ✅ Testes locais com simulação
 
 ```bash
 node src/simularMensagens.js
 ```
 
----
 
-## 📌 Comandos disponíveis (`comandos.js`)
+ 📌 Comandos disponíveis (`comandos.js`)
 
 * `!ajuda` – Lista de comandos
 * `!catalogo` – Link para visualizar produtos
 * `!horario` – Informa o horário de atendimento
 
----
 
-## 📌 Palavras-chave configuradas (`respostas.js`)
+📌 Palavras-chave configuradas (`respostas.js`)
 
 Respostas personalizadas são disparadas quando palavras como "oi", "catálogo", "entrega", etc. são detectadas.
 
----
 
-## 📦 Futuras melhorias (Fase 2 e adiante)
+📦 Futuras melhorias (Fase 2 e adiante)
 
 * Envio automático de catálogo em PDF
 * Integração com links de pagamento (Pix, Mercado Pago, etc)
@@ -80,12 +74,11 @@ Respostas personalizadas são disparadas quando palavras como "oi", "catálogo",
 * IA para entendimento de intenções (ChatGPT ou NLP)
 * Painel de controle web
 
----
 
-## 🔒 Observação
+🔒 Observação
 
 Este projeto é apenas para fins educacionais. O uso de bots no WhatsApp deve seguir as diretrizes da plataforma.
 
----
+
 
 Desenvolvido por [Gustavo Lima](https://github.com/gustavolima973) | Engenharia de Software – UnB
