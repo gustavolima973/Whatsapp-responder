@@ -1,4 +1,4 @@
-🤖 WhatsApp Bot Node.js
+🤖 WhatsApp Bot feito com Node.js
 
 Esse projeto é um bot de atendimento automático via WhatsApp, desenvolvido em Node.js com a biblioteca [whatsapp-web.js](https://github.com/pedroslopez/whatsapp-web.js).
 Foi construído com foco em modularidade, evolução por fases e integração futura com um sistema de disparo de mensagens.
