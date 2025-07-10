@@ -56,9 +56,9 @@ node src/simularMensagens.js
 
  📌 Comandos disponíveis (`comandos.js`)
 
-* `!ajuda` – Lista de comandos
-* `!catalogo` – Link para visualizar produtos
-* `!horario` – Informa o horário de atendimento
+`!ajuda` – Lista de comandos
+`!catalogo` – Link para visualizar produtos
+`!horario` – Informa o horário de atendimento
 
 
 📌 Palavras-chave configuradas (`respostas.js`)
